@@ -5,5 +5,6 @@
 # Useful links
 
 - [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/)
+- [git flow support](https://github.com/petervanderdoes/gitflow-avh/wiki/Reference:-git-flow-support)
 - [Gitlab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html#environment-branches-with-gitlab-flow)
 - [Semantic Versioning 2.0.0](https://semver.org/#semantic-versioning-200)
