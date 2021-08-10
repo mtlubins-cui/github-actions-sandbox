@@ -32,5 +32,4 @@ jobs:
         uses: ./.github/actions/bump-version
         id: bump
         env:
-          PACKAGEJSON_DIR: "projects/cui-design-ng"
           token: ${{ secrets.GITHUB_TOKEN }}
