@@ -79,7 +79,7 @@ Toolkit.run(async (tools) => {
           await tools.runInWorkspace("git", [
             "checkout",
             "--",
-            "projects/cui-design-ng/package.json"
+            "package.json"
           ]);
 
           await tools.runInWorkspace("git", [
