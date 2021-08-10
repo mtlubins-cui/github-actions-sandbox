@@ -74,8 +74,6 @@ Toolkit.run(async (tools) => {
               .trim();
           newVersion = `${process.env["INPUT_TAG-PREFIX"]}${newVersion}`;
 
-          process.chdir(process.env.GITHUB_WORKSPACE);
-
           await tools.runInWorkspace("git", [
             "checkout",
             "--",
@@ -89,13 +87,9 @@ Toolkit.run(async (tools) => {
             `${newVersion}`
           ]);
 
-          process.chdir(`${process.env.GITHUB_WORKSPACE}/${process.env.PACKAGEJSON_DIR}`);
-
           execSync(
             `npm version --git-tag-version=false ${version}`
           );
-
-          process.chdir(process.env.GITHUB_WORKSPACE);
 
           await tools.runInWorkspace("git", [
             "commit",
@@ -103,7 +97,6 @@ Toolkit.run(async (tools) => {
             "-m",
             `ci: ${commitMessage} ${newVersion}`,
           ]);
-
 
           await tools.runInWorkspace("git", [
             "flow",
