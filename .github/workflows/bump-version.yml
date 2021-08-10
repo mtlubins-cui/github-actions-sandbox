@@ -21,30 +21,15 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
-          token: ${{ secrets.SUPER_AUTH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure CI Git User
         run: |
-          git config user.name "Release manager"
-          git config user.email noreply@github.com
+          git config --global user.name "Release manager"
+          git config --global user.email noreply@github.com
 
       - name: Update version in package.json
         uses: ./.github/actions/bump-version
         id: bump
         env:
-          PACKAGEJSON_DIR: "projects/cui-design-ng"
-          token: ${{ secrets.SUPER_AUTH_TOKEN }}
-
-      - name: Set up Node.js
-        if: steps.bump.outputs.update == 'true'
-        uses: actions/setup-node@v1.2.0
-        with:
-          node-version: "12.x"
-          registry-url: "https://npm.pkg.github.com/"
-          scope: "@cytiva"
-
-      - name: Publish package to GPR
-        if: steps.bump.outputs.update == 'true'
-        run: npm install && npm run publish:cui-design-ng
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

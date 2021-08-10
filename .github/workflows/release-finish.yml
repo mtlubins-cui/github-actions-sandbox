@@ -27,7 +27,7 @@ jobs:
         with:
           ref: release/${{ github.event.inputs.version }}
           fetch-depth: 0
-          token: ${{ secrets.SUPER_AUTH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Initialize mandatory git config
         run: |
@@ -67,9 +67,3 @@ jobs:
       - name: Release publish
         run: |
           git push --all --follow-tags --no-verify
-
-      - name: Publish package to GPR
-        run: |
-          npm run publish:cui-design-ng
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
