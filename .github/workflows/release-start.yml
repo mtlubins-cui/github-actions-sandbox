@@ -56,7 +56,7 @@ jobs:
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@1.0.0
         env:
-          SUPER_AUTH_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
         with:
           head: release/${{ github.event.milestone.title }}
           base: master
