@@ -1,0 +1,17 @@
+{
+  "name": "github-actions-sandbox",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bombaharris/github-actions-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bombaharris/github-actions-sandbox/issues"
+  },
+  "homepage": "https://github.com/Bombaharris/github-actions-sandbox#readme"
+}

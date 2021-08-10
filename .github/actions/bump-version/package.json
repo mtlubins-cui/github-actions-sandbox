@@ -1,0 +1,17 @@
+{
+  "name": "gh-action-bump-version",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "actions-toolkit": "^2.2.0",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "jest": "^25.2.7",
+    "standard": "^14.3.3"
+  }
+}

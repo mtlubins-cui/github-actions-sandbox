@@ -1,0 +1,25 @@
+name: Update version in package.json
+description: Automated version bump for npm packages.
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: chevron-up
+  color: blue
+inputs:
+  tag-prefix:
+    description: 'Prefix that is used for the git tag'
+    default: ''
+    required: false
+  PACKAGEJSON_DIR:
+    description: 'Custom dir to the package'
+    default: ''
+    required: false
+  token:
+    description: 'Custom token to the package'
+    default: ''
+    required: false
+outputs:
+  update:
+    description: 'Whether the version has update'
+ 
