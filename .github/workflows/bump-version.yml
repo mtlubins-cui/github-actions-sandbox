@@ -21,7 +21,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SUPER_AUTH_TOKEN }}
 
       - name: Configure CI Git User
         run: |
@@ -32,4 +32,4 @@ jobs:
         uses: ./.github/actions/bump-version
         id: bump
         env:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SUPER_AUTH_TOKEN }}
