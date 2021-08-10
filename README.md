@@ -2,7 +2,7 @@
 
 ![Release flow diagram](release-flow-diagram.png)
 
-# Useful links
+## Useful links
 
 - [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/)
 - [git flow support](https://github.com/petervanderdoes/gitflow-avh/wiki/Reference:-git-flow-support)
