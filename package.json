@@ -1,6 +1,7 @@
 {
   "name": "github-actions-sandbox",
   "version": "0.0.1",
+  "description": "Example semver releases",
   "scripts": {
     "test": "exit 0"
   },
