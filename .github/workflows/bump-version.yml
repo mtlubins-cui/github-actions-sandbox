@@ -32,19 +32,4 @@ jobs:
         uses: ./.github/actions/bump-version
         id: bump
         env:
-          PACKAGEJSON_DIR: "projects/cui-design-ng"
           token: ${{ secrets.SUPER_AUTH_TOKEN }}
-
-      - name: Set up Node.js
-        if: steps.bump.outputs.update == 'true'
-        uses: actions/setup-node@v1.2.0
-        with:
-          node-version: "12.x"
-          registry-url: "https://npm.pkg.github.com/"
-          scope: "@cytiva"
-
-      - name: Publish package to GPR
-        if: steps.bump.outputs.update == 'true'
-        run: npm install && npm run publish:cui-design-ng
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
