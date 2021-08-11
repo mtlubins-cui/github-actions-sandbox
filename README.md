@@ -2,6 +2,11 @@
 
 ![Release flow diagram](release-flow-diagram.png)
 
+
+# Useful links
+
+- [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/)
+
 ## Useful links
 
 - [git flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
