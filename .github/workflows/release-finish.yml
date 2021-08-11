@@ -27,7 +27,7 @@ jobs:
         with:
           ref: release/${{ github.event.inputs.version }}
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SUPER_AUTH_TOKEN }}
 
       - name: Initialize mandatory git config
         run: |
@@ -41,20 +41,9 @@ jobs:
           git checkout release/${{ github.event.inputs.version }}
           git flow init -d
 
-      - name: Install packages
-        run: |
-          npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SUPER_AUTH_TOKEN }}
-
       - name: Bump package.json version to release
-        working-directory: ./projects/cui-design-ng
         run: |
           npm version --git-tag-version=false ${{ github.event.inputs.version }}
-
-      - name: Generate changelog
-        run: |
-          npm run changelog:cui-design-ng
 
       - name: Commit changes
         run: |
